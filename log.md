@@ -21,8 +21,8 @@
 - 更新 ｜ `.zcode/skills/gongzhonghao-data-update/SKILL.md` 的目录路径与母本状态 ｜ `.zcode/`
 - 更新 ｜ 脚本实跑验证通过：42 份导出 → 新增 0 篇、刷新 0 篇、保留 41 篇；5 个 sheet 逐单元格
   语义零差异（文件重写只改了 xlsx 容器与公式缓存）｜ `tools/wechat-data/`
-- 更新 ｜ 修正迁移后失效的命令路径（SOP 与 skill 共 5 处），并更正篇数/份数笔误
-  （38→41 篇、39→42 份）｜ `tools/wechat-data/数据提取与维护规则.md`、`.zcode/skills/`
+- 更新 ｜ 修正迁移后失效的路径与事实笔误共 30 处（脚本 7、SOP 10、skill 13），
+  含篇数/份数更正（38→41 篇、39→42 份）｜ `tools/wechat-data/`、`.zcode/skills/`
 - 更新 ｜ 分析表改写前快照留档（改前 44080 字节，改后 44084 字节，内容等价）
   ｜ `backup/2026-09-21/tools/wechat-data/`
 - 待确认 ｜ 母本 `公众号文章数据分析模板.xlsx` 已从 WPS 文件缓存找回，结构核对与预期一致
