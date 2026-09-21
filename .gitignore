@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Excel / WPS 锁文件与临时文件
+.~*.xlsx
+~$*.xlsx
+
+# 微信接口凭据（管道尚未启用）
+.wechat_token.json
+
+# ZCode 会话级计划文件（与 GitHome 的同步保持一致：plans/ 不共享）
+.zcode/plans/
+
+# 注意：raw/data/wechat/ 下的 .xls 是公众号后台原始导出，不可再生，
+# 故意【不】忽略，必须纳入版本控制。

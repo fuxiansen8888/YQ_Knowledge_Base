@@ -1,0 +1,40 @@
+{
+  "hooks": {
+    "enabled": true,
+    "events": {
+      "SessionStart": [
+        {
+          "hooks": [
+            {
+              "type": "command",
+              "command": "NODE=$(command -v node || ls -1 \"$HOME\"/.nvm/versions/node/*/bin/node 2>/dev/null | sort -V | tail -1); if [ -n \"$NODE\" ]; then \"$NODE\" \"${ZCODE_PROJECT_DIR}/.zcode/hooks/activate-personas.js\"; else echo '{}'; fi",
+              "timeout": 10
+            }
+          ]
+        }
+      ],
+      "PreToolUse": [
+        {
+          "matcher": "Bash",
+          "hooks": [
+            {
+              "type": "command",
+              "command": "${ZCODE_PROJECT_DIR}/.zcode/hooks/guard-git-add.sh"
+            }
+          ]
+        }
+      ],
+      "PostToolUse": [
+        {
+          "matcher": "Bash",
+          "hooks": [
+            {
+              "type": "command",
+              "command": "${ZCODE_PROJECT_DIR}/.zcode/hooks/notify-long-task.sh"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

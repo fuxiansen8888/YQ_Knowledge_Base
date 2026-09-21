@@ -1,0 +1,223 @@
+{
+  "main": {
+    "id": "1688cf9a1da65c16",
+    "type": "split",
+    "children": [
+      {
+        "id": "e81b8fe84d7b708e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "30ee9dee5660834b",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a0ad6c44774e3ca5",
+    "type": "split",
+    "children": [
+      {
+        "id": "1f5096d12a0bb94e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "39674c3bd44daaf7",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "9c03d1ee1e26e621",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "1733132d4d4704f8",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "0c468d935a46af98",
+    "type": "split",
+    "children": [
+      {
+        "id": "37094573d2913de7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a2259fdd51638d44",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "fa2f2ab90477c97c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "d6f7f694a7b90ecf",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "b3f31e02307f22d7",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "2ea8cc849100f198",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "39674c3bd44daaf7",
+  "lastOpenFiles": [
+    "tools/wechat-data/公众号文章数据分析模板.xlsx",
+    "tools/wechat-data/公众号文章数据分析表.xlsx.bak-notused",
+    "tools/wechat-data/__pycache__",
+    "tools/wechat-data/import_wechat_export.py.tmp.50476.83427bc75ee2",
+    "backup/2026-09-21/tools/wechat-data/公众号文章数据分析表.xlsx",
+    "backup/2026-09-21/tools/wechat-data",
+    "backup/2026-09-21/tools",
+    "backup/2026-09-21",
+    "tools/wechat-data/公众号文章数据分析表.xlsx",
+    "tools/wechat-data/数据提取与维护规则.md",
+    "tools/wechat-data/import_wechat_export.py",
+    "wiki/topics/选题框架.md",
+    "wiki/writing/数据洞察与写作方向plan.md",
+    "wiki/audience/目标读者痛点地图.md",
+    "wiki/titles/自媒体文章起标题技巧.md",
+    "wiki/structures/排版规则.md",
+    "raw/articles/drafts/重读毛选才懂_越懂事越被欺负_一个讨好型人格的自我救赎.md",
+    "raw/articles/drafts/给阿嬷的情书_小红书版.md",
+    "raw/articles/drafts/从讨好型到敢亮剑_一个害怕冲突的人如何找到出口.md",
+    "raw/data/wechat/数据明细（高敏感者的自我救赎：当“我执”消散，慈悲...）.xls",
+    "raw/articles/drafts/初稿_我那篇爆文下面只有一条在问自己.md",
+    "raw/articles/mine/高敏感者的自我救赎：当“我执”消散，慈悲便开始.md",
+    "raw/articles/mine/阅读的终极目的：是与另一个灵魂共鸣.md",
+    "raw/articles/mine/送女儿上幼儿园第一天，我忽然读懂了三十年前的妈妈.md",
+    "raw/articles/mine/越来越讨厌自己的“好脾气”，直到我翻开《毛选》…….md",
+    "raw/articles/mine/西风刮梦秋无际，夜月生香雪满身：一株芦荻的启示.md",
+    "raw/articles/mine/蛰伏数年，只为一夏——蝉的信仰.md",
+    "raw/articles/mine/菊花羞作倾城色？夺回华夏审美的话语权.md",
+    "raw/articles/mine/色疑琼树倚，香似玉京来——草木记忆之栀子花.md",
+    "raw/articles/mine/生活不在别处：致我们琐碎日常里的光.md",
+    "raw/articles/mine/梳妆台前清晨7点的闹钟，正在偷走一个女人的大脑带宽.md",
+    "raw/articles/mine/更看重精神自由的人：你不是不上进，只是灵魂无法被消费欲驱动.md",
+    "raw/articles/mine/日本电影《恶女花魁》——樱花般的生命和爱.md",
+    "raw/articles/mine/接放学没跑第一，3岁女儿大哭：你为什么不第一个接我？.md",
+    "raw/articles/mine/所有人都将渐行渐远，成长的代价是孤独.md",
+    "raw/articles/mine/我们究竟该如何感受美？或许答案就在路边的柏香里.md"
+  ]
+}
