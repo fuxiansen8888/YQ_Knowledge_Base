@@ -32,3 +32,30 @@
 - 待核实 ｜ 「日本电影《恶女花魁》」一文 6 张配图（原 `图片和附件/*.webp`）在迁入前已丢失
 - 待确认 ｜ 分析表 `选题库` sheet（29 条选题）是否镜像为 Markdown，以支持 Obsidian 内双链检索
 - 待确认 ｜ `master` 分支归属：全部验证通过后是否将 `master` 指向首次提交
+
+## 2026-09-21 ｜ 自建目录改中文名
+
+- 更新 ｜ 上一节按英文名建的结构，全部改用中文名（系统与约定文件保留原名）。
+  **上面「知识库初始化」条目里的英文路径，请按本表换算**——该节作为历史记录未作改写
+
+| 原 | 现 | 原 | 现 |
+|---|---|---|---|
+| `raw/` | `原始素材/` | `wiki/` | `知识/` |
+| `raw/articles/mine/` | `原始素材/文章/我的原创/` | `wiki/accounts/` | `知识/账号/` |
+| `raw/articles/drafts/` | `原始素材/文章/草稿/` | `wiki/articles/` | `知识/爆款拆解/` |
+| `raw/articles/refs/` | `原始素材/文章/对标/` | `wiki/titles/` | `知识/标题模式/` |
+| `raw/screenshots/` | `原始素材/截图/` | `wiki/topics/` | `知识/选题/` |
+| `raw/comments/` | `原始素材/评论/` | `wiki/structures/` | `知识/写作结构/` |
+| `raw/chats/` | `原始素材/对话/` | `wiki/tools/` | `知识/AI工具/` |
+| `raw/data/wechat/` | `原始素材/数据/公众号/` | `wiki/audience/` | `知识/读者需求/` |
+| `raw/inbox/` | `原始素材/待整理/` | `wiki/writing/` | `知识/写作经验/` |
+| `tools/wechat-data/` | `工具/公众号数据/` | `backup/` | `备份/` |
+
+- 更新 ｜ 重命名用 `git mv`，文件历史保留；两份 README 改为 `说明.md`
+- 更新 ｜ 同步改动 26 处路径引用：脚本 `DATA_DIR`、SOP 运行命令、skill、
+  Obsidian 附件目录（`raw/screenshots` → `原始素材/截图`）
+- 更新 ｜ 改名后重跑数据管道验证：42 份导出 → 新增 0 / 刷新 0 / 保留 41，
+  新路径可用 ｜ `工具/公众号数据/`
+
+> 保留英文的文件：`.obsidian/`、`.zcode/`、`.gitignore`、`.gitkeep`（系统与 git 约定）、
+> `AGENTS.md`（ZCode 按此固定名读取）；`index.md`、`log.md` 是你原始需求里指定的名字，未改。

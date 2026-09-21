@@ -1,12 +1,12 @@
 #!/usr/bin/env python3.12
 """把公众号后台导出的单篇明细 .xls 增量并入「公众号文章数据分析表.xlsx」。
 
-raw/data/wechat/ 是新数据的投递口：把导出丢进去、跑一次脚本就行。
+原始素材/数据/公众号/ 是新数据的投递口：把导出丢进去、跑一次脚本就行。
 
 增量规则（每次运行）：
     新标题     → 追加一行
     已有标题   → 只刷新数据列（阅读/分享/推荐占比这类客观值），人工填的列一律不动
-    行永不删除 → raw/data/wechat/ 里删掉某份导出，表里那一行仍保留，历史不因文件消失而丢
+    行永不删除 → 原始素材/数据/公众号/ 里删掉某份导出，表里那一行仍保留，历史不因文件消失而丢
     人工填的列（D 字数 / E 内容方向 / F 人群匹配度 / G 核心价值类型 / P 跳出率）
                按标题原样保留，只有空着的才填默认值（方向与价值类型按标题关键词猜，匹配度按三档阈值算）
     行序      按发布日期倒序（最新在最上面），序号随之重编 1..N
@@ -46,7 +46,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE = os.path.join(BASE, "公众号文章数据分析模板.xlsx")
 OUTPUT = os.path.join(BASE, "公众号文章数据分析表.xlsx")
 # 原始导出属于只读素材层，与脚本产物分开放
-DATA_DIR = os.path.normpath(os.path.join(BASE, "..", "..", "raw", "data", "wechat"))
+DATA_DIR = os.path.normpath(os.path.join(BASE, "..", "..", "原始素材", "数据", "公众号"))
 SHEET = "文章数据记录"
 PIVOT_SHEET = "方向×价值类型透视"
 REGIME_SHEET = "流量结构透视"
@@ -913,7 +913,7 @@ def merge_rows(sheet, articles: list[dict]) -> dict:
             sheet.cell(row, column).value = None
         sheet[f"A{row}"] = index + 1  # 序号按倒序重编
         # 本次有导出的行：人工/判断列从历史继承，其余列只认本次导出（旧布局/旧数值不会被带过来）；
-        # raw/data/wechat/ 里已无导出的历史行：整行按原样保留
+        # 原始素材/数据/公众号/ 里已无导出的历史行：整行按原样保留
         if title in incoming:
             carried = {c: v for c, v in history.get(title, {}).items() if c in CARRY_COLS}
             values = {**carried, **incoming[title]}
@@ -947,7 +947,7 @@ def merge_rows(sheet, articles: list[dict]) -> dict:
         "titles": titles,
         "added": [title for title in titles if title not in history],
         "refreshed": {title: diff for title, diff in refreshed.items() if diff},
-        "orphan": [title for title in titles if title not in incoming],  # raw/data/wechat/ 里已无导出，但行保留
+        "orphan": [title for title in titles if title not in incoming],  # 原始素材/数据/公众号/ 里已无导出，但行保留
     }
 
 
@@ -1417,7 +1417,7 @@ def main() -> None:
     workbook.save(OUTPUT)
     injected = inject_cached_results(OUTPUT, {SHEET: result["cached"]})
 
-    print(f"raw/data/wechat/ 下 {len(sources)} 份导出 → 新文章 {len(result['added'])} 篇、"
+    print(f"原始素材/数据/公众号/ 下 {len(sources)} 份导出 → 新文章 {len(result['added'])} 篇、"
           f"刷新数据 {len(result['refreshed'])} 篇、历史保留 {len(result['orphan'])} 篇"
           f"（表内共 {len(result['titles'])} 行，按发布日期倒序）")
     if moved:
@@ -1446,7 +1446,7 @@ def main() -> None:
         changes = " / ".join(f"{col}: {old} → {new}" for col, (old, new) in list(diff.items())[:4])
         print(f"  ↻刷新: {title[:26]} → {changes}")
     for title in result["orphan"]:
-        print(f"  ＝保留（raw/data/wechat/ 里已无这份导出）: {title[:40]}")
+        print(f"  ＝保留（原始素材/数据/公众号/ 里已无这份导出）: {title[:40]}")
 
     print(f"\n{'序号':<4}{'发布日期':<12}{'阅读':>6}{'订阅打开率':>10}{'完读率':>8}{'分享率':>8}"
           f"  内容方向 / 价值类型 / 匹配度  标题")
