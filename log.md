@@ -107,3 +107,9 @@
   需 Node ≥ 20，本机 v24.21.0）。未安装前这 3 个技能无法执行，仅知识型 3 个（markdown/bases/canvas）
   即刻可用 ｜ `.zcode/skills/`
 - 更新 ｜ `AGENTS.md` 架构节 `.zcode/skills/` 一行补上 Obsidian 六件套清单 ｜ `AGENTS.md`
+- 更新 ｜ `AGENTS.md` 精简：删去「工作流」（任务决策链 / 标准任务四阶段 / 长任务管理）与
+  「与姊妹项目的关系」两节，为用户手改，非 Agent 改动 ｜ `AGENTS.md`
+- 待确认 ｜ 上条删除的连带影响：`.zcode/rules/task-persistence.md` 现已无任何引用（文件仍在）；
+  决策链中原有的「要写文章 → `原创写作` skill」「Git 提交 → `/git-commit`」「HTML 报告 →
+  `html-report-designer`」等路由，不再出现在 Schema 正文；姊妹项目的双向同步约定（通用约束两库
+  一致、领域规则各写各的）随之失效。若非有意精简，需从 `bef6520` 恢复这两节 ｜ `AGENTS.md`
