@@ -1,3 +1,6 @@
 {
-  "attachmentFolderPath": "原始素材/截图"
+  "attachmentFolderPath": "原始素材/截图",
+  "strictLineBreaks": true,
+  "showLineNumber": true,
+  "alwaysUpdateLinks": true
 }
