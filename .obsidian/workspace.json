@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工具/公众号数据/数据提取与维护规则.md",
+                "file": "AGENTS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "数据提取与维护规则"
+              "title": "AGENTS"
             }
           }
         ]
@@ -83,7 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "0c468d935a46af98",
@@ -187,8 +187,8 @@
   },
   "active": "30ee9dee5660834b",
   "lastOpenFiles": [
-    "原始素材/待整理/Obsidian CEO 亲自开源！48K Star AI 笔记技能包来了.md",
     "工具/公众号数据/数据提取与维护规则.md",
+    "原始素材/待整理/Obsidian CEO 亲自开源！48K Star AI 笔记技能包来了.md",
     "tools/wechat-data/公众号文章数据分析模板.xlsx",
     "tools/wechat-data/公众号文章数据分析表.xlsx.bak-notused",
     "tools/wechat-data/__pycache__",
