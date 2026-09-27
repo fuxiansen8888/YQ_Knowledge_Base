@@ -10,6 +10,38 @@ Obsidian 知识库（vault），服务于公众号 AI 工具测评与内容创�
 
 核心机制是 **LLM 自生长**：新素材进 `原始素材/`，Agent 从中提炼可复用知识写进 `知识/`，逐渐沉淀成独立知识页面。规则见下方「知识库 Schema」。
 
+## 技术栈
+
+| 类别 | 技术 |
+|------|------|
+| AI 工作流 | ZCode（skills / commands / hooks / rules / personas）+ Obsidian |
+| 脚本语言 | Python 3.12（类型注解；优先标准库，少引依赖） |
+| 数据读写 | openpyxl（`.xlsx`）、xlrd（公众号后台导出 `.xls`） |
+| 可视化 | ECharts（内联 HTML，离线可用） |
+| 文档格式 | Markdown + Obsidian `[[双链]]` |
+| 配置 / 钩子 | JSON（`.zcode/config.json`）、Node.js（hooks） |
+
+## 命令
+
+```bash
+# 公众号数据管道——必须 cd 进脚本所在目录，脚本自己扫 原始素材/数据/公众号/
+cd 工具/公众号数据 && python3.12 import_wechat_export.py
+
+# 改完 Python 必跑语法检查
+python3 -m py_compile <改动过的 .py>
+
+# Git（封装命令，源码在 .zcode/commands/）
+/git-commit        # 提交 + 推送（不打 tag）
+/保存              # 提交 + 修订号 +1 打 tag + 推送
+/git-tag-patch     # 修 Bug → 修订号 +1
+/git-tag-minor     # 新功能 → 次版本 +1
+/git-tag-major     # 重大变更 → 主版本 +1
+/sync-master       # 同步 main 分支
+
+# 回复风格（persona），也可直接说 "normal mode"
+/caveman  /ponytail  /normal
+```
+
 ## 目录结构
 
 ```
@@ -123,7 +155,7 @@ related: ["[[相关页面]]"]
 ### 数据管道
 
 - 入口 `工具/公众号数据/`，操作规范见该目录下 `数据提取与维护规则.md`
-- 新导出丢进 `原始素材/数据/公众号/`，再在该目录运行 `python3.12 import_wechat_export.py`
+- 新导出丢进 `原始素材/数据/公众号/`，再 `cd 工具/公众号数据 && python3.12 import_wechat_export.py`
 - **`.~公众号文章数据分析表.xlsx` 锁文件存在时不要跑脚本，也不要删锁文件**——说明表正被 WPS/Excel 打开
 - 脚本产物是分析表（5 个 sheet）；`原始素材/数据/公众号/` 下的导出**永不删除**
 - 母本 `公众号文章数据分析模板.xlsx` 已从 WPS 缓存找回（迁入前曾丢失）
@@ -226,5 +258,23 @@ related: ["[[相关页面]]"]
 
 ## 范围外
 
+### 写作类
+
 - 不要给 Markdown 笔记内容添加你"觉得更好"的观点——只做用户要求的润色/排版
 - 不要引入笔记内容本身没有的结论、数据或引用
+- 不替用户做署名、事实判断和立场表态；只动错别字、标点、排版、结构呈现
+
+### 规则类
+
+- 不修改由工具自动管理的配置文件，除非明确要求：`.obsidian/app.json`、`.obsidian/workspace.json`、`.zcode/config.json`
+- 不擅自改 `.zcode/hooks/`、`.zcode/personas/` 的行为逻辑——改了会静默改变每个会话的注入内容，先说清影响再动
+- 不改 `工具/公众号数据/` 脚本的既有输出契约（5 个 sheet 结构、锁文件拒跑机制）而不先说明
+- 不新增顶层目录；不删除文件；不确定时先问
+
+## 与姊妹项目的关系
+
+另一仓库 `GitProject`（投资研究 + 量化脚本）与本库共用同一套行为规范骨架。两库的差异只是领域：那边是 Python 定量分析，这边是 Obsidian 知识库 + 公众号数据管道。
+
+- 通用约束（核心行为准则、任务四阶段、Git 纪律、persona 规则）保持两边一致，改一处时同步另一处
+- 领域专属规则各写各的，不互相搬——`股票智能分析系统/`、`reasonix.toml` 等属于那边，不引进本库
+- 本库独有的：知识库 Schema（三层结构 / 十条核心规则 / frontmatter / 自生长流程）
