@@ -96,3 +96,14 @@
   完读差异可能全部来自篇幅——**不构成推翻**，动作照旧（长文分节）｜ `个人原创/索引.md`
 - 待确认 ｜ 分析表「选题库」sheet 现有 29 条选题全部标记「未写」（优先级 高 18 / 中 11），
   尚无一条被正文消化 ｜ `工具/公众号数据/公众号文章数据分析表.xlsx`
+- 新建 ｜ 迁入 6 个 Obsidian 技能，vendored 自 `kepano/obsidian-skills`（MIT，Copyright © 2026
+  Steph Ango，许可证存 `.zcode/skills/.obsidian-skills-LICENSE`）：`obsidian-markdown`（OFM 双链/
+  嵌入/Callout/属性 + references CALLOUTS·EMBEDS·PROPERTIES）、`obsidian-bases`（`.base` 视图/过滤/
+  公式/汇总 + references FUNCTIONS_REFERENCE）、`json-canvas`（`.canvas` 节点/连线/分组 + references
+  EXAMPLES）、`obsidian-cli`、`defuddle`、`knap`。安装方式区别于上游（Claude Code / Codex / OpenCode）：
+  ZCode 直接落在项目级 `.zcode/skills/`，目录名即 `name`，无需注册 ｜ `.zcode/skills/`
+- 待确认 ｜ 上述 6 个技能中后 3 个依赖外部 CLI，本机当前均缺：`obsidian`（随 Obsidian 应用走，
+  需应用处于运行状态）、`defuddle`（npm 包存在，0.19.4）、`knap`（npm 包存在，0.6.0，
+  需 Node ≥ 20，本机 v24.21.0）。未安装前这 3 个技能无法执行，仅知识型 3 个（markdown/bases/canvas）
+  即刻可用 ｜ `.zcode/skills/`
+- 更新 ｜ `AGENTS.md` 架构节 `.zcode/skills/` 一行补上 Obsidian 六件套清单 ｜ `AGENTS.md`

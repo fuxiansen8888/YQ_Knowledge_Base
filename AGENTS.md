@@ -67,7 +67,7 @@ YQ_Knowledge_Base/
 
 ## 架构
 
-- `.zcode/skills/` → 可复用 AI 技能（原创写作、git 工作流、HTML 报告、公众号数据更新、skill 编写）
+- `.zcode/skills/` → 可复用 AI 技能（原创写作、git 工作流、HTML 报告、公众号数据更新、skill 编写、Obsidian 六件套：`obsidian-markdown` / `obsidian-bases` / `json-canvas` / `obsidian-cli` / `defuddle` / `knap`）
 - `.zcode/commands/` → 快捷命令（git 提交/打 tag/同步、persona 切换）
 - `.zcode/rules/` → 按文件类型生效的行为规则
 - `.zcode/hooks/` → 钩子（git 守门、长任务通知、persona 注入）
