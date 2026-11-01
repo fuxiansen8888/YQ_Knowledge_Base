@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AGENTS.md",
+                "file": "个人原创/草稿/选题框架.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AGENTS"
+              "title": "选题框架"
             }
           }
         ]
@@ -187,6 +187,9 @@
   },
   "active": "30ee9dee5660834b",
   "lastOpenFiles": [
+    "AGENTS.md",
+    "个人原创/草稿/待写选题框架入口.md",
+    "知识/选题/选题框架.md",
     "工具/公众号数据/数据提取与维护规则.md",
     "原始素材/待整理/Obsidian CEO 亲自开源！48K Star AI 笔记技能包来了.md",
     "tools/wechat-data/公众号文章数据分析模板.xlsx",
@@ -219,9 +222,6 @@
     "raw/articles/mine/色疑琼树倚，香似玉京来——草木记忆之栀子花.md",
     "raw/articles/mine/生活不在别处：致我们琐碎日常里的光.md",
     "raw/articles/mine/梳妆台前清晨7点的闹钟，正在偷走一个女人的大脑带宽.md",
-    "raw/articles/mine/更看重精神自由的人：你不是不上进，只是灵魂无法被消费欲驱动.md",
-    "raw/articles/mine/日本电影《恶女花魁》——樱花般的生命和爱.md",
-    "raw/articles/mine/接放学没跑第一，3岁女儿大哭：你为什么不第一个接我？.md",
-    "raw/articles/mine/所有人都将渐行渐远，成长的代价是孤独.md"
+    "raw/articles/mine/更看重精神自由的人：你不是不上进，只是灵魂无法被消费欲驱动.md"
   ]
 }
