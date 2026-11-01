@@ -533,29 +533,28 @@ def migrate_layout(sheet) -> bool:
     if moved:
         offset = NOTES_FIRST - current
         rows = list(range(current, current + NOTES_ROWS))
-        merges = {str(r) for r in sheet.merged_cells.ranges}
         for row in rows:  # 先整块拆掉合并，否则往里写会撞上只读的 MergedCell
-            merged = f"A{row}:AB{row}"
-            if merged in merges:
-                sheet.unmerge_cells(merged)
+            for span in [r for r in sheet.merged_cells.ranges
+                         if r.min_row <= row <= r.max_row]:  # 说明块整行合并（A~AM），按行拆
+                sheet.unmerge_cells(str(span))
         # 目标位置可能和原位重叠，先快照到内存再落笔
         snapshot = [[(sheet.cell(row, column).value, copy(sheet.cell(row, column)._style))
-                     for column in range(1, 29)] for row in rows]
+                     for column in range(1, LAST_COLUMN + 1)] for row in rows]
         heights = [sheet.row_dimensions[row].height for row in rows]
         for index, row in enumerate(rows):
             for column, (value, style) in enumerate(snapshot[index], start=1):
                 target = sheet.cell(row + offset, column)
                 target.value = value
                 target._style = style
-            sheet.merge_cells(f"A{row + offset}:AB{row + offset}")
+            sheet.merge_cells(f"A{row + offset}:{get_column_letter(LAST_COLUMN)}{row + offset}")
             sheet.row_dimensions[row + offset].height = heights[index]
         for row in rows:  # 原位腾出来的行清空（和新块重叠的除外，它们已被新内容覆盖）
             if not NOTES_FIRST <= row < NOTES_FIRST + NOTES_ROWS:
-                for column in range(1, 29):
+                for column in range(1, LAST_COLUMN + 1):
                     sheet.cell(row, column).value = None
 
     for row in range(FIRST_ROW, LAST_ROW + 1):  # 数据行样式（腾空的行和新增的行都要补）
-        for column in range(1, 29):
+        for column in range(1, LAST_COLUMN + 1):
             cell = sheet.cell(row, column)
             if cell.value in (None, ""):
                 cell._style = copy(sheet.cell(DATA_STYLE_ROW, column)._style)
